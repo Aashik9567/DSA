@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #define max 4
 int queue[max];
 int front=0,rear=-1;
@@ -6,11 +7,11 @@ void inqueue();
 void dequeue();
 void disp();
 int main(){
-	int choice,n,i;
+	int choice,n;
 	printf("1 for inqueue\n2 for dequeue\n 3 for display:\n");
-	printf("no of operation :\n");
-	scanf("%d",&n);
-	for(i=0;i<n;i++){
+
+while(1){
+
 		printf("enter your choice:\n");
 		scanf("%d",&choice);
 		switch(choice){
@@ -28,7 +29,7 @@ int main(){
 			}
 			default:{
 				printf("invalid option:");
-				break;
+			exit(0);
 			}
 		}
 	}
@@ -61,3 +62,39 @@ void dequeue(){
 		  	printf("item in queue at %d position is %d\n",i,queue[i]);	
 		}
 	}
+
+
+1 for inqueue
+2 for dequeue
+ 3 for display:
+enter your choice:
+
+1
+enter item to insert
+10
+enter your choice:
+1
+enter item to insert
+80
+enter your choice:
+1
+enter item to insert
+90
+enter your choice:
+1
+enter item to insert
+70
+enter your choice:
+1
+queue overflow
+enter your choice:
+2
+item dequed is 10
+enter your choice:
+3
+item in queue at 1 position is 80
+item in queue at 2 position is 90
+item in queue at 3 position is 70
+enter your choice:
+8
+invalid option:
