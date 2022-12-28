@@ -1,3 +1,4 @@
+//link_list program for mac::
 #include<stdio.h>
 #include<stdlib.h>
 struct node {
@@ -25,21 +26,27 @@ int main(){
         switch(a){
             case 1:
                 insert_beg();
+                system("clear");
                 break;
             case 2:
                 insert();
+                system("clear");
                 break;
             case 3:
                 insert_end();
+                system("clear");
                 break;
             case 4:
                 delete_beg();
+                system("clear");
                 break;
             case 5:
                 delete();
+                system("clear");
                 break;
             case 6:
                 delete_end();
+                system("clear");
                 break;
             case 7:
                 disp();
@@ -103,12 +110,14 @@ void insert(){
     ptr->next=newnode;
 }
 void delete_beg(){
+    ptr=head;
     if(head==NULL){
         printf("list empty\n");
     }
     else{
-        ptr=head;
+        //ptr=head;
         printf("deleted item::%d\n",ptr->info);
+        head=ptr->next;
         free(ptr);
     }
 }
@@ -163,17 +172,21 @@ void delete() {
     }
 }
 void disp(){
+    int i=0;
+    system("clear");
     ptr=head;
-    if(ptr==NULL){
+    if(ptr==NULL)
+    {
         printf("list empty:");
     }
     else{
-        ptr=head;
-        printf("the element in the list is:\t");
+        //ptr=head;
+        printf("the element in the list is::\n");
         while(ptr!=NULL){
-            printf("\n%d",ptr->info);
+            //printf("\n");
+            printf("node[%d]->%d\n",i,ptr->info);
+            i++;
             ptr=ptr->next;
         }
     }
 }
-
