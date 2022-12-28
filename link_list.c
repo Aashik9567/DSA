@@ -21,7 +21,7 @@ int main(){
     int a;
     while(1){
         printf("1.for insertion at beggining\n2.for insertion at specified position\n3.for insertion at end\n4.for deletion at begining\n5.deletion at specified pos\n6.deletion at end\n7.for display\n");
-        printf("enter operation you want to perform::\n");
+        printf("enter operation you want to perform::\n-->");
         scanf("%d",&a);
         switch(a){
             case 1:
@@ -58,7 +58,7 @@ int main(){
 
 }
 void insert_beg(){
-    printf("enter data to insert:");
+    printf("enter data to insert:\n-->");
     scanf("%d",&data);
     newnode=(struct node*)malloc(sizeof(struct node));
     newnode->info =data;
@@ -72,7 +72,7 @@ void insert_beg(){
     }
 }
 void insert_end(){
-    printf("enter data to insert:");
+    printf("enter data to insert:\n-->");
     scanf("%d",&data);
     newnode=(struct node*)malloc(sizeof(struct node));
     newnode->info =data;
@@ -91,11 +91,11 @@ void insert_end(){
 }
 void insert(){
     int pos;
-    printf("enter data to insert:");
+    printf("enter data to insert:\n-->");
     scanf("%d",&data);
     newnode=(struct node*)malloc(sizeof(struct node));
     newnode->info =data;
-    printf("enter position at which u want to insert::");
+    printf("enter position at which u want to insert:\n-->");
     scanf("%d",&pos);
     ptr=head;
     for(int j=0;j<pos-1;j++){
@@ -116,7 +116,7 @@ void delete_beg(){
     }
     else{
         //ptr=head;
-        printf("deleted item::%d\n",ptr->info);
+        printf("deleted item::%d\n-->",ptr->info);
         head=ptr->next;
         free(ptr);
     }
@@ -128,7 +128,7 @@ void delete_end(){
     else if(head->next==NULL){
         ptr=head;
         head=NULL;
-        printf("deleted item is :%d",ptr->info);
+        printf("deleted item is :%d\n-->",ptr->info);
         free(ptr);
 
     }
@@ -138,7 +138,7 @@ void delete_end(){
             temp=ptr;
             ptr=ptr->next;
             temp->next=NULL;
-            printf("deleted item is :%d\t",ptr->info);
+            printf("deleted item is :%d\n-->",ptr->info);
             free(ptr);
 
         }
@@ -150,12 +150,12 @@ void delete() {
         printf("list empty\n");
 
     }
-    printf("enter position at which u want to delete::");
+    printf("enter position at which u want to delete:\n-->");
     scanf("%d", &pos);
     if (pos == 0) {
         ptr = head;
         head = head->next;
-        printf("deleted item is :%d", ptr->info);
+        printf("deleted item is :%d\n-->", ptr->info);
         free(ptr);
 
     } else {
@@ -181,7 +181,7 @@ void disp(){
     }
     else{
         //ptr=head;
-        printf("the element in the list is::\n");
+        printf("the element in the list is:\n");
         while(ptr!=NULL){
             //printf("\n");
             printf("node[%d]->%d\n",i,ptr->info);
