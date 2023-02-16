@@ -18,5 +18,5 @@ count ++;
   
    tower(n-1,a,d,s);
    }
- 
+ return 0;
 } 
